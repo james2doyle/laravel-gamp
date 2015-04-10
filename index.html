@@ -57,12 +57,12 @@ Adds Support for Seamless Usage with Laravel 5.</p>
 
 <p>You can either add the package directly by firing this command</p>
 
-<pre><code>$ composer require irazasyed/laravel-gamp:~0.1
+<pre><code>$ composer require irazasyed/laravel-gamp:0.*
 </code></pre>
 
 <p>Or add in the <code>require</code> key of <code>composer.json</code> file manually</p>
 
-<pre><code>"irazasyed/laravel-gamp": "~0.1"
+<pre><code>"irazasyed/laravel-gamp": "0.*"
 </code></pre>
 
 <p>And Run the Composer update command</p>
@@ -116,9 +116,9 @@ So all the methods listed <a href="https://github.com/theiconic/php-ga-measureme
 
 <p>Send a Page view hit:</p>
 
-<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-vo">$gamp</span> <span class="pl-k">=</span> <span class="pl-s3">GAMP</span><span class="pl-k">::</span>setClientId( <span class="pl-s1"><span class="pl-pds">'</span>123456<span class="pl-pds">'</span></span> );</span>
-<span class="pl-s2"><span class="pl-vo">$gamp</span><span class="pl-k">-&gt;</span>setDocumentPath( <span class="pl-s1"><span class="pl-pds">'</span>/page<span class="pl-pds">'</span></span> );</span>
-<span class="pl-s2"><span class="pl-vo">$gamp</span><span class="pl-k">-&gt;</span>sendPageview();</span></pre></div>
+<div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-smi">$gamp</span> <span class="pl-k">=</span> <span class="pl-c1">GAMP</span><span class="pl-k">::</span>setClientId( <span class="pl-s"><span class="pl-pds">'</span>123456<span class="pl-pds">'</span></span> );</span>
+<span class="pl-s1"><span class="pl-smi">$gamp</span><span class="pl-k">-&gt;</span>setDocumentPath( <span class="pl-s"><span class="pl-pds">'</span>/page<span class="pl-pds">'</span></span> );</span>
+<span class="pl-s1"><span class="pl-smi">$gamp</span><span class="pl-k">-&gt;</span>sendPageview();</span></pre></div>
 
 <h3>
 <a id="config-overview" class="anchor" href="#config-overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Config Overview</h3>
@@ -171,7 +171,7 @@ So all the methods listed <a href="https://github.com/theiconic/php-ga-measureme
 <p>Thanks to the guys @ <a href="https://github.com/theiconic/php-ga-measurement-protocol">THE ICONIC</a> who developed the GA Measurement Protocol PHP library. Go check them out!</p>
       </section>
       <footer>
-        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
       </footer>
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
