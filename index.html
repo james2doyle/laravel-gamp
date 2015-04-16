@@ -1,39 +1,28 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset="UTF-8">
     <title>Laravel-gamp by irazasyed</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="javascripts/scale.fix.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1 class="header">Laravel-gamp</h1>
-        <p class="header">Laravel 5 Google Analytics Measurement Protocol Package</p>
+    <section class="page-header">
+      <h1 class="project-name">Laravel-gamp</h1>
+      <h2 class="project-tagline">Laravel 4/5 Google Analytics Measurement Protocol Package</h2>
+      <a href="https://github.com/irazasyed/laravel-gamp" class="btn">View on GitHub</a>
+      <a href="https://github.com/irazasyed/laravel-gamp/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/irazasyed/laravel-gamp/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-        <ul>
-          <li class="download"><a class="buttons" href="https://github.com/irazasyed/laravel-gamp/zipball/master">Download ZIP</a></li>
-          <li class="download"><a class="buttons" href="https://github.com/irazasyed/laravel-gamp/tarball/master">Download TAR</a></li>
-          <li><a class="buttons github" href="https://github.com/irazasyed/laravel-gamp">View On GitHub</a></li>
-        </ul>
-
-        <p class="header">This project is maintained by <a class="header name" href="https://github.com/irazasyed">irazasyed</a></p>
-
-
-      </header>
-      <section>
-        <h1>
+    <section class="main-content">
+      <h1>
 <a id="laravel-gamp-package" class="anchor" href="#laravel-gamp-package" aria-hidden="true"><span class="octicon octicon-link"></span></a>Laravel-GAMP Package</h1>
 
-<p><a href="https://github.com/irazasyed/laravel-gamp"><img src="https://img.shields.io/badge/Package%20for%20Laravel-5-blue.svg?style=flat-square" alt="Package for Laravel"></a>
+<p><a href="https://github.com/irazasyed/laravel-gamp"><img src="https://img.shields.io/badge/Package%20for%20Laravel-4/5-blue.svg?style=flat-square" alt="Package for Laravel"></a>
 <a href="https://github.com/irazasyed/laravel-gamp/releases"><img src="https://img.shields.io/github/release/irazasyed/laravel-gamp.svg?style=flat-square" alt="Latest Version"></a>
 <a href="https://github.com/irazasyed/laravel-gamp/releases"><img src="https://img.shields.io/github/tag/irazasyed/laravel-gamp.svg?style=flat-square" alt="Latest Tag"></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="Software License"></a>
@@ -41,9 +30,8 @@
 <a href="https://packagist.org/packages/irazasyed/laravel-gamp"><img src="https://img.shields.io/packagist/dt/irazasyed/laravel-gamp.svg?style=flat-square" alt="Total Downloads"></a></p>
 
 <blockquote>
-<p>Laravel GAMP: Google Analytics Measurement Protocol Package.
-A wrapper around <a href="https://github.com/theiconic/php-ga-measurement-protocol">THE ICONIC - GA Measurement Protocol</a> PHP Library. 
-Adds Support for Seamless Usage with Laravel 5.</p>
+<p>Laravel GAMP: Google Analytics Measurement Protocol Package for Laravel 4 &amp; 5.
+Send data to Google Analytics from Laravel. Supports all GA Measurement Protocol API methods.</p>
 </blockquote>
 
 <h2>
@@ -91,12 +79,25 @@ Adds Support for Seamless Usage with Laravel 5.</p>
 
 <p>Open your terminal window and fire the following command to publish config file to your config directory:</p>
 
-<pre><code>php artisan vendor:publish --provider="Irazasyed\LaravelGAMP\LaravelGAMPServiceProvider"
+<h4>
+<a id="laravel-4" class="anchor" href="#laravel-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Laravel 4:</h4>
+
+<hr>
+
+<pre><code>$ php artisan config:publish irazasyed/laravel-gamp
+</code></pre>
+
+<h4>
+<a id="laravel-5" class="anchor" href="#laravel-5" aria-hidden="true"><span class="octicon octicon-link"></span></a>Laravel 5:</h4>
+
+<hr>
+
+<pre><code>$ php artisan vendor:publish --provider="Irazasyed\LaravelGAMP\LaravelGAMPServiceProvider"
 </code></pre>
 
 <p>OR</p>
 
-<pre><code>php artisan vendor:publish
+<pre><code>$ php artisan vendor:publish
 </code></pre>
 
 <p>The former command publishes config file for just this package and the latter publishes vendor files for other packages too. Depending on what you want to do, you can use any (Doesn't really matter).</p>
@@ -104,10 +105,10 @@ Adds Support for Seamless Usage with Laravel 5.</p>
 <h2>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
 
-<p>Open <code>config/gamp.php</code> file and set the <code>tracking_id</code> with your Google Analytics tracking / web property ID.
+<p>Open <code>gamp.php</code> file in <code>app/config/packages/irazasyed/laravel-gamp</code> (<strong>Laravel 4</strong>) / <code>./config</code> (<strong>Laravel 5</strong>) and set the <code>tracking_id</code> with your Google Analytics tracking / web property ID.
 Refer the config file for other default configuration settings.</p>
 
-<p>This Package adds Laravel Support to <a href="https://github.com/theiconic/php-ga-measurement-protocol">THE ICONIC - GA Measurement Protocol</a> PHP Library. 
+<p>This Package adds Laravel Support to <a href="https://github.com/theiconic/php-ga-measurement-protocol">GA Measurement Protocol</a> PHP Library by <a href="https://github.com/theiconic">THE ICONIC</a>. 
 It's simply a wrapper around the library with default config for easier usage with Laravel. 
 So all the methods listed <a href="https://github.com/theiconic/php-ga-measurement-protocol#usage">here</a> are available and will work seamlessly.</p>
 
@@ -123,29 +124,25 @@ So all the methods listed <a href="https://github.com/theiconic/php-ga-measureme
 <h3>
 <a id="config-overview" class="anchor" href="#config-overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Config Overview</h3>
 
-<p>Open <code>config/gamp.php</code> for detailed comments for each config.</p>
+<p>Open the config file for detailed comments for each option.</p>
 
 <p>Set your Google Analytics Tracking / Web Property ID in <code>tracking_id</code> key <strong>[REQUIRED]</strong></p>
 
-<pre><code>'tracking_id'      =&gt; 'UA-XXXX-Y',
-</code></pre>
+<div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-s"><span class="pl-pds">'</span>tracking_id<span class="pl-pds">'</span></span>      <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>UA-XXXX-Y<span class="pl-pds">'</span></span>,</span></pre></div>
 
 <p>All other configs are optional, use as per your requirements.</p>
 
 <p>To send data over SSL, set <code>is_ssl</code> to true.</p>
 
-<pre><code>'is_ssl' =&gt; true,
-</code></pre>
+<div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-s"><span class="pl-pds">'</span>is_ssl<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-c1">true</span>,</span></pre></div>
 
 <p>To Anonymize IP, set <code>anonymize_ip</code> to true.</p>
 
-<pre><code>'anonymize_ip' =&gt; true,
-</code></pre>
+<div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-s"><span class="pl-pds">'</span>anonymize_ip<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-c1">true</span>,</span></pre></div>
 
 <p>To Make Async Requests, set <code>async_requests</code> to true.</p>
 
-<pre><code>'async_requests'  =&gt; true,
-</code></pre>
+<div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-s"><span class="pl-pds">'</span>async_requests<span class="pl-pds">'</span></span>  <span class="pl-k">=&gt;</span> <span class="pl-c1">true</span>,</span></pre></div>
 
 <p>...</p>
 
@@ -158,7 +155,7 @@ So all the methods listed <a href="https://github.com/theiconic/php-ga-measureme
 <h2>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
 
-<p>MIT © <a href="http://lk.gd/irazasyed">Syed I.R</a></p>
+<p><a href="LICENSE">MIT</a> © <a href="http://lk.gd/irazasyed">Syed I.R</a></p>
 
 <h2>
 <a id="additional-information" class="anchor" href="#additional-information" aria-hidden="true"><span class="octicon octicon-link"></span></a>Additional information</h2>
@@ -169,13 +166,16 @@ So all the methods listed <a href="https://github.com/theiconic/php-ga-measureme
 <a id="php-library" class="anchor" href="#php-library" aria-hidden="true"><span class="octicon octicon-link"></span></a>PHP Library</h2>
 
 <p>Thanks to the guys @ <a href="https://github.com/theiconic/php-ga-measurement-protocol">THE ICONIC</a> who developed the GA Measurement Protocol PHP library. Go check them out!</p>
-      </section>
-      <footer>
-        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/irazasyed/laravel-gamp">Laravel-gamp</a> is maintained by <a href="https://github.com/irazasyed">irazasyed</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-		          <script type="text/javascript">
+
+    </section>
+
+            <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
@@ -188,3 +188,4 @@ So all the methods listed <a href="https://github.com/theiconic/php-ga-measureme
 
   </body>
 </html>
+
