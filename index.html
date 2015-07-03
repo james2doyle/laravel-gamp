@@ -12,7 +12,7 @@
   <body>
     <section class="page-header">
       <h1 class="project-name">Laravel-gamp</h1>
-      <h2 class="project-tagline">Laravel 4/5 Google Analytics Measurement Protocol Package</h2>
+      <h2 class="project-tagline">Laravel 5 Google Analytics Measurement Protocol Package</h2>
       <a href="https://github.com/irazasyed/laravel-gamp" class="btn">View on GitHub</a>
       <a href="https://github.com/irazasyed/laravel-gamp/zipball/master" class="btn">Download .zip</a>
       <a href="https://github.com/irazasyed/laravel-gamp/tarball/master" class="btn">Download .tar.gz</a>
@@ -22,40 +22,44 @@
       <h1>
 <a id="laravel-gamp-package" class="anchor" href="#laravel-gamp-package" aria-hidden="true"><span class="octicon octicon-link"></span></a>Laravel-GAMP Package</h1>
 
-<p><a href="https://github.com/irazasyed/laravel-gamp"><img src="https://img.shields.io/badge/Package%20for%20Laravel-4/5-blue.svg?style=flat-square" alt="Package for Laravel"></a>
+<p><a href="https://github.com/irazasyed/laravel-gamp"><img src="https://img.shields.io/badge/Package%20for%20Laravel-5/5.1-blue.svg?style=flat-square" alt="Package for Laravel"></a>
 <a href="https://github.com/irazasyed/laravel-gamp/releases"><img src="https://img.shields.io/github/release/irazasyed/laravel-gamp.svg?style=flat-square" alt="Latest Version"></a>
-<a href="https://github.com/irazasyed/laravel-gamp/releases"><img src="https://img.shields.io/github/tag/irazasyed/laravel-gamp.svg?style=flat-square" alt="Latest Tag"></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="Software License"></a>
-<a href="https://insight.sensiolabs.com/projects/880d79a9-7bab-4872-ab98-76b2e53429e9"><img src="https://img.shields.io/sensiolabs/i/880d79a9-7bab-4872-ab98-76b2e53429e9.svg?style=flat-square" alt="SensioLabsInsight"></a>
+<a href="https://insight.sensiolabs.com/projects/880d79a9-7bab-4872-ab98-76b2e53429e9"><img src="https://insight.sensiolabs.com/projects/880d79a9-7bab-4872-ab98-76b2e53429e9/mini.png" alt="SensioLabsInsight"></a>
 <a href="https://packagist.org/packages/irazasyed/laravel-gamp"><img src="https://img.shields.io/packagist/dt/irazasyed/laravel-gamp.svg?style=flat-square" alt="Total Downloads"></a></p>
 
 <blockquote>
-<p>Laravel GAMP: Google Analytics Measurement Protocol Package for Laravel 4 &amp; 5.
+<p>Laravel GAMP: Google Analytics Measurement Protocol Package for Laravel 5.
 Send data to Google Analytics from Laravel. Supports all GA Measurement Protocol API methods.</p>
 </blockquote>
+
+<p><a href="https://github.com/irazasyed"><img src="https://cloud.githubusercontent.com/assets/1915268/8476296/b49f74ac-20dd-11e5-8698-aa23b2f7e6fd.png" alt="Laravel GAMP"></a></p>
 
 <h2>
 <a id="quick-start" class="anchor" href="#quick-start" aria-hidden="true"><span class="octicon octicon-link"></span></a>Quick start</h2>
 
+<blockquote>
+<p>If you're on Laravel <code>4.2</code> or on <code>5.0</code> with PHP <code>5.4</code> &amp; above, Please use <code>0.5</code> branch.</p>
+</blockquote>
+
 <h3>
-<a id="required-setup--installation" class="anchor" href="#required-setup--installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Required setup / Installation</h3>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h3>
 
 <h4>
 <a id="step-1-install-through-composer" class="anchor" href="#step-1-install-through-composer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 1: Install Through Composer</h4>
 
 <p>You can either add the package directly by firing this command</p>
 
-<pre><code>$ composer require irazasyed/laravel-gamp:0.*
+<pre lang="cli"><code>$ composer require irazasyed/laravel-gamp
 </code></pre>
 
 <p>Or add in the <code>require</code> key of <code>composer.json</code> file manually</p>
 
-<pre><code>"irazasyed/laravel-gamp": "0.*"
-</code></pre>
+<div class="highlight highlight-json"><pre><span class="pl-s"><span class="pl-pds">"</span>irazasyed/laravel-gamp<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>^1.0<span class="pl-pds">"</span></span></pre></div>
 
 <p>And Run the Composer update command</p>
 
-<pre><code>$ composer update
+<pre lang="cli"><code>$ composer update
 </code></pre>
 
 <h4>
@@ -63,41 +67,26 @@ Send data to Google Analytics from Laravel. Supports all GA Measurement Protocol
 
 <p>Open <code>config/app.php</code> and, to your "providers" array at the bottom, add:</p>
 
-<pre><code>'Irazasyed\LaravelGAMP\LaravelGAMPServiceProvider'
-</code></pre>
+<div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-c1">Irazasyed\LaravelGAMP\</span><span class="pl-c1">LaravelGAMPServiceProvider</span><span class="pl-k">::</span><span class="pl-c1">class</span></span></pre></div>
 
 <h4>
 <a id="step-3-add-facade-optional" class="anchor" href="#step-3-add-facade-optional" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 3: Add Facade (Optional)</h4>
 
 <p>Optionally add an alias to make it easier to use the library. Open <code>config/app.php</code> and, to your "aliases" array at the bottom, add:</p>
 
-<pre><code>'GAMP'  =&gt; 'Irazasyed\LaravelGAMP\Facades\GAMP'
-</code></pre>
+<div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-s"><span class="pl-pds">'</span>GAMP<span class="pl-pds">'</span></span>  <span class="pl-k">=&gt;</span> <span class="pl-c1">Irazasyed\LaravelGAMP\Facades\</span><span class="pl-c1">GAMP</span><span class="pl-k">::</span><span class="pl-c1">class</span></span></pre></div>
 
 <h4>
 <a id="step-4-publish-config" class="anchor" href="#step-4-publish-config" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 4: Publish Config</h4>
 
 <p>Open your terminal window and fire the following command to publish config file to your config directory:</p>
 
-<h4>
-<a id="laravel-4" class="anchor" href="#laravel-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Laravel 4:</h4>
-
-<hr>
-
-<pre><code>$ php artisan config:publish irazasyed/laravel-gamp
-</code></pre>
-
-<h4>
-<a id="laravel-5" class="anchor" href="#laravel-5" aria-hidden="true"><span class="octicon octicon-link"></span></a>Laravel 5:</h4>
-
-<hr>
-
-<pre><code>$ php artisan vendor:publish --provider="Irazasyed\LaravelGAMP\LaravelGAMPServiceProvider"
+<pre lang="cli"><code>$ php artisan vendor:publish --provider="Irazasyed\LaravelGAMP\LaravelGAMPServiceProvider"
 </code></pre>
 
 <p>OR</p>
 
-<pre><code>$ php artisan vendor:publish
+<pre lang="cli"><code>$ php artisan vendor:publish
 </code></pre>
 
 <p>The former command publishes config file for just this package and the latter publishes vendor files for other packages too. Depending on what you want to do, you can use any (Doesn't really matter).</p>
@@ -105,11 +94,11 @@ Send data to Google Analytics from Laravel. Supports all GA Measurement Protocol
 <h2>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
 
-<p>Open <code>gamp.php</code> file in <code>app/config/packages/irazasyed/laravel-gamp</code> (<strong>Laravel 4</strong>) / <code>./config</code> (<strong>Laravel 5</strong>) and set the <code>tracking_id</code> with your Google Analytics tracking / web property ID.
+<p>Open config file <code>config/gamp.php</code> and set the <code>tracking_id</code> with your Google Analytics tracking / web property ID.
 Refer the config file for other default configuration settings.</p>
 
-<p>This Package adds Laravel Support to <a href="https://github.com/theiconic/php-ga-measurement-protocol">GA Measurement Protocol</a> PHP Library by <a href="https://github.com/theiconic">THE ICONIC</a>. 
-It's simply a wrapper around the library with default config for easier usage with Laravel. 
+<p>This Package adds Laravel Support to <a href="https://github.com/theiconic/php-ga-measurement-protocol">GA Measurement Protocol</a> PHP Library by <a href="https://github.com/theiconic">THE ICONIC</a>.
+It's simply a wrapper around the library with default config for easier usage with Laravel.
 So all the methods listed <a href="https://github.com/theiconic/php-ga-measurement-protocol#usage">here</a> are available and will work seamlessly.</p>
 
 <h3>
@@ -128,9 +117,9 @@ So all the methods listed <a href="https://github.com/theiconic/php-ga-measureme
 
 <p>Set your Google Analytics Tracking / Web Property ID in <code>tracking_id</code> key <strong>[REQUIRED]</strong></p>
 
-<div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-s"><span class="pl-pds">'</span>tracking_id<span class="pl-pds">'</span></span>      <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>UA-XXXX-Y<span class="pl-pds">'</span></span>,</span></pre></div>
+<div class="highlight highlight-php"><pre><span class="pl-s1"><span class="pl-s"><span class="pl-pds">'</span>tracking_id<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s"><span class="pl-pds">'</span>UA-XXXX-Y<span class="pl-pds">'</span></span>,</span></pre></div>
 
-<p>All other configs are optional, use as per your requirements.</p>
+<p>All other configuration options are optional, use as per your requirements.</p>
 
 <p>To send data over SSL, set <code>is_ssl</code> to true.</p>
 
@@ -149,13 +138,8 @@ So all the methods listed <a href="https://github.com/theiconic/php-ga-measureme
 <p>Refer the library's <a href="https://github.com/theiconic/php-ga-measurement-protocol#usage">documentation</a> for other remaining methods and examples, they all work.</p>
 
 <blockquote>
-<p><strong>Note:</strong> You don't need to use the protocol version, tracking id and non blocking methods from the original library as they're automatically set based on the config file. As long as you update the config file with correct settings, it should work just fine.</p>
+<p><strong>Note:</strong> You don't have to use the protocol version, tracking id, anonymize ip and async request (non-blocking) methods from the original library as they're automatically set in Service Provider when the package is initialized based on the config file. As long as you update the config file with correct settings, it should work just fine.</p>
 </blockquote>
-
-<h2>
-<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
-
-<p><a href="LICENSE">MIT</a> © <a href="http://lk.gd/irazasyed">Syed I.R</a></p>
 
 <h2>
 <a id="additional-information" class="anchor" href="#additional-information" aria-hidden="true"><span class="octicon octicon-link"></span></a>Additional information</h2>
@@ -163,9 +147,14 @@ So all the methods listed <a href="https://github.com/theiconic/php-ga-measureme
 <p>Any issues, please <a href="https://github.com/irazasyed/laravel-gamp/issues">report here</a></p>
 
 <h2>
-<a id="php-library" class="anchor" href="#php-library" aria-hidden="true"><span class="octicon octicon-link"></span></a>PHP Library</h2>
+<a id="credits" class="anchor" href="#credits" aria-hidden="true"><span class="octicon octicon-link"></span></a>Credits</h2>
 
-<p>Thanks to the guys @ <a href="https://github.com/theiconic/php-ga-measurement-protocol">THE ICONIC</a> who developed the GA Measurement Protocol PHP library. Go check them out!</p>
+<p>This package is a wrapper around the GA Measurement Protocol PHP Library. Thanks to the guys @ <a href="https://github.com/theiconic/php-ga-measurement-protocol">THE ICONIC</a> who developed the library!</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p><a href="LICENSE">MIT</a> © <a href="https://github.com/irazasyed">Syed Irfaq R.</a></p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/irazasyed/laravel-gamp">Laravel-gamp</a> is maintained by <a href="https://github.com/irazasyed">irazasyed</a>.</span>
